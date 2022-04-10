@@ -1,0 +1,94 @@
+			body {
+				box-sizing:border-box;
+				margin:0;
+				padding:0;
+				font-family:Tahoma,Arial,sans-serif;
+				background:#fefefeff;
+				display:flex;
+				align-items:center;
+				justify-content:center;	
+				color:#000;	
+				min-height: 100vh;	
+				overflow: hidden;
+			}
+			
+			.clock {
+				position:relative;
+				background:#ffffff;
+				height:300px;
+				width:300px;
+				border:0.000000px inset;
+				border-radius:10%;
+				box-shadow:inset -3px -3px 7px #ffffffb2, inset -3px -3px 5px rgba(94, 104, 125, 0.945);
+			}
+			
+			.clock .numbers {
+				--rotate:0;
+				position:absolute;
+				width:100%;
+				height:100%;
+				font-size:20px;
+				font-weight:600;
+				text-align:center;
+				transform:rotate(var(--rotate));
+			}
+			
+			.clock .number1 { --rotate:30deg;}
+			.clock .number2 { --rotate:60deg;}
+			.clock .number3 { --rotate:90deg;}
+			.clock .number4 { --rotate:120deg;}
+			.clock .number5 { --rotate:150deg;}
+			.clock .number6 { --rotate:180deg;}
+			.clock .number7 { --rotate:210deg;}
+			.clock .number8 { --rotate:240deg;}
+			.clock .number9 { --rotate:270deg;}
+			.clock .number10 { --rotate:300deg;}
+			.clock .number11 { --rotate:330deg;}
+			.clock .number12 { --rotate:360deg;}
+			
+			.clock .hand {
+				--rotate:0;
+				position:absolute;
+				bottom:50%;
+				left:50%;
+				width:12px;
+				height:43%;
+				border-top-left-radius:10px;
+				border-top-right-radius:10px;
+				z-index:10;
+				transform:translateX(-50%) rotate(calc(var(--rotate) * 1deg));
+				transform-origin:bottom;
+			}
+			
+			.clock::after {
+				content:" ";
+				position:absolute;
+				/*background:linear-gradient(#444fff,#ffffffb1,#fffffb,#4444ff);*/
+				background:#000;
+				z-index:11;
+				height:25px;
+				width:25px;
+				border-radius:50px;
+				top:50%;
+				left:50%;
+				transform:translate(-50%,-50%);
+			}
+			
+			.clock .hour{
+				width:10px;
+				height:35%;
+				background-color:black;
+			}
+			
+			.clock .seconds{
+				width:3px;
+				height:45%;
+				background-color:red;
+			}
+			
+			.clock .minutes{
+				width:6px;
+				height:40%;
+				background-color:black;
+			}
+		
